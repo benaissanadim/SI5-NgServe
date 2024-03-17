@@ -1,0 +1,12 @@
+canvas{
+  border: solid 1px black;
+}
+
+/** center everything using flex */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

@@ -1,0 +1,33 @@
+<header>
+  <img src="../../../assets/logo.svg" alt="Logo" class="logo">
+</header>
+<br> <br>
+<div class="details">
+<ng-container *ngIf="preparations">
+  <h2>Order Confirmed</h2>
+  <h3> Order Id : {{orderId}}</h3>
+  <ng-container *ngIf="isTakeAway()">
+    <h2>You can take your command</h2>
+  </ng-container>
+  <ng-container *ngIf="!isTakeAway()">
+    <h2>Please have a seat at table {{getTableNumber()}}</h2>
+  </ng-container>
+  <br>
+  <ng-container *ngFor="let preparation of preparations">
+    <div class="row">
+      <div class="col-12">
+        <h5>Preparation Id: {{ preparation.id }}</h5>
+        <p>Should be ready at <strong>{{ preparation.shouldBeReadyAt | date:'HH\'h\'mm':'UTC+4'}}</strong></p>
+        <ng-container *ngIf="preparation.preparedItems.length > 0">
+          <h5> Items : {{ uniqueItems(preparation.preparedItems).join(' ') }}</h5>
+          <br>
+        </ng-container>        
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+</div>
+<ng-container *ngIf="orderError">
+  There was an error with your order. Please try again.
+</ng-container>
+

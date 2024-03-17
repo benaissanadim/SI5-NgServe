@@ -1,0 +1,20 @@
+header {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & img.logo {
+    max-width: 40%;
+  }
+}
+
+.details{
+  padding: 10%;
+}
+
+p{
+font-size: 1.8em;
+color: rgb(209, 3, 3);
+}

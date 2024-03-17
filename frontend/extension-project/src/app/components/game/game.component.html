@@ -1,0 +1,17 @@
+<header>
+  <img alt="Logo" class="logo" src="../../../assets/logo.svg">
+</header>
+<main class="flex bigger-gap">
+  <div>
+    <button (click)="products()" color="accent" mat-raised-button>Add something to your order!</button>
+  </div>
+
+  <div class="flex column ">
+    <h1>Pick a color:</h1>
+    <div class="flex bigger-gap">
+      <input [(ngModel)]="color" matInput type="color">
+      <button (click)="paint()" color="primary" mat-raised-button>Paint!</button>
+    </div>
+  </div>
+</main>
+

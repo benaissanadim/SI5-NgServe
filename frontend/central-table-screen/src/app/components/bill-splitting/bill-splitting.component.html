@@ -1,0 +1,28 @@
+<header>
+  <img alt="Logo" class="logo" src="../../../assets/logo.svg">
+</header>
+<main>
+  <div class="flex baseline">
+    <div *ngFor="let orderReady of ordersReady" class="customer-order">
+      <h2>{{orderReady.name}}</h2>
+      <br>
+      <h3> Items : </h3>
+      <ng-container *ngFor="let menuItem of orderReady.items">
+        <p>- {{menuItem.shortName}} x {{menuItem.howMany}}</p>
+      </ng-container>
+      <h2> Price : {{orderReady.price}} $</h2>
+    </div>
+  </div>
+  <h2>To Pay : <span class="price">{{price}}</span> $</h2>
+  <div class="flex column">
+    <h1>Do you want to split the bill ?</h1>
+    <div class="grid">
+      <button (click)="one_by_one()" color="secondary" mat-icon-button>
+        <mat-icon>check</mat-icon>
+      </button>
+      <button (click)="all()" color="warn" mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,348 @@
+@keyframes upAndReset {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideHorizontally {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/** Keyframes for the cart and cancel buttons: they will be shown only if we have a delay */
+@keyframes colorAndScaleCartButton {
+  0% {
+    background-color: #005b00;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #006600;
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: #005b00;
+    transform: scale(1);
+  }
+}
+
+@keyframes colorAndScaleCancelButton {
+  0% {
+    background-color: #c20000;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #cc0000;
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: #c20000;
+    transform: scale(1);
+  }
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 20px 20px;
+
+  & header {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img.logo {
+      max-width: 40%;
+      max-height: 80%;
+    }
+  }
+
+  .meals-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex: 0 0 auto;
+    overflow-y: inherit;
+    overflow-x: auto;
+    padding-top: 10px;
+
+
+    .meal-tile {
+      flex-basis: calc(20% - 10px); /* assuming 10px is the desired gap between tiles */
+      flex-grow: 1;
+      flex-shrink: 0;
+
+      display: flex;
+      flex-direction: column;
+      color: #333;
+      background-color: #fafafa;
+      padding: 0.2em;
+      border-radius: 9px;
+      border: 1px solid #eee;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+
+      & img {
+        width: 100%;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      &:hover {
+        animation: upAndReset 1s ease;
+        border: 2px solid #c20000;
+      }
+
+      .legend {
+        text-align: center;
+        font-size: 0.8em;
+        font-weight: 600;
+        margin: 0.5em 0;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      &:nth-child(1n) {
+        /*color: white;
+         background-color: #c20000; */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  & hr {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .pagination-button {
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .previous {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .currentPage {
+    margin: auto 0;
+  }
+
+  .smart-container {
+    height: calc(95% - 350px);
+    width: 100%;
+  }
+
+  .grid-container {
+    width: 100%;
+    max-height: 100%;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+
+
+    .vertical-tile {
+      background: #dddddd;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      flex-basis: 25%;
+      flex-grow: 1;
+      position: relative;
+
+      &:hover {
+        /** no more transform */
+      }
+
+      & img {
+        object-fit: cover;
+        border-radius: 5px;
+        object-position: center;
+        flex-grow: 1;
+        border-bottom: 1px solid #eee;
+        overflow: hidden;
+      }
+
+      .item-name, .item-footer {
+        padding: 10px;
+      }
+
+      .info-button {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        width: 24px;
+        height: 24px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        cursor: pointer;
+        font-family: cursive;
+        color: #171717;
+      }
+
+      .item-name {
+        font-size: 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        flex: 0 0 auto;
+        color: #333;
+        text-align: center;
+        font-weight: 600;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .item-name.scrolling {
+        animation: slideHorizontally 10s linear infinite;
+        width: auto;
+      }
+
+      .item-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        width: 100%;
+        background-color: #fafafa;
+
+        .item-price {
+          font-size: 0.9em;
+          color: #b97d2c;
+          font-weight: 600;
+        }
+
+        .red-background {
+          background-color: #c20000;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+          font-size: 0.8rem;
+          color: white;
+
+          &:hover {
+            animation: colorAndScaleCancelButton 0.5s ease-in-out;
+          }
+
+          & svg {
+            transform: translate(-6px, -1px);
+
+            & path {
+              /** make it beautiful */
+              stroke: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .back-button {
+    position: absolute;
+    left: 10px;
+    background-color: #F0F0F0;
+    border: none;
+    padding: 8px;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #E0E0E0;
+    }
+
+    & svg {
+      fill: #2E2E2E;
+    }
+  }
+
+  .bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+
+    & button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 0.5em;
+
+      &.cancel {
+        background-color: #c20000;
+        color: white;
+
+        &:hover {
+          animation: colorAndScaleCancelButton 0.5s ease-in-out;
+        }
+      }
+
+
+      &.cart {
+        background-color: #005b00;
+        color: white;
+        position: relative;
+        width: 40vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover {
+          animation: colorAndScaleCartButton 0.5s ease-in-out;
+        }
+
+        & img {
+          margin-right: 10px;
+          max-height: 3vh;
+        }
+
+        .item-count {
+          color: black;
+          background-color: white;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.orders {
+  display: flex;
+  justify-content: space-between; /* Utilisez space-between pour ajouter de l'espace entre les deux sections */
+  height: 100%;
+}
+
+.in-preparation, .being-served {
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  flex-grow: 1; /* Utilisez flex-grow pour que les deux sections se développent également */
+}
+
+.in-preparation {
+  margin-right: 10px; /* Ajoutez une marge à droite de la section "In Preparation" */
+  /* Aucune largeur spécifique nécessaire */
+}
+
+.being-served {
+  margin-left: 10px; /* Ajoutez une marge à droite de la section "In Preparation" */
+  /* Aucune largeur spécifique nécessaire */
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  border-bottom: 1px solid grey;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.status-message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+
+.id {
+  font-size: 0.7em;
+  color: rgb(209, 3, 3);
+}
+
+.table {
+  font-size: 1.1em;
+}

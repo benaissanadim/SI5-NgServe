@@ -1,0 +1,12 @@
+<header>
+  <img alt="Logo" class="logo" src="../../../assets/logo.svg">
+</header>
+<main>
+  <div class="table-layout">
+    <div class="flex customer-order column">
+      <h1>Customer : {{orderReady.name}}</h1>
+      <h2>Amount to pay : {{orderReady.price}} $</h2>
+    </div>
+  </div>
+  <button (click)="pay()" color="primary" mat-button mat-raised-button>Pay</button>
+</main>

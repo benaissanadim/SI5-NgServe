@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Appender console avec encodage personnalisé -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%highlight(%-5level) - %msg%n</pattern>
+            <!-- Utilisation de %highlight pour attribuer des couleurs -->
+        </encoder>
+    </appender>
+
+    <!-- Utilisation des couleurs pour chaque niveau -->
+    <root level="INFO">
+        <appender-ref ref="console" />
+    </root>
+
+</configuration>

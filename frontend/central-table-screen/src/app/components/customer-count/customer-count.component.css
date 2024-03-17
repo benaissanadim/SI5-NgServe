@@ -1,0 +1,8 @@
+.row {
+  gap: calc(0.5em + 8vw);
+}
+
+h2, h3 {
+  font-weight: bold;
+  text-align: center;
+}

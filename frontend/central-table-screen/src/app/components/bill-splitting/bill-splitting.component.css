@@ -1,0 +1,12 @@
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.customer-order{
+  padding: 20px;
+}

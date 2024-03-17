@@ -1,0 +1,49 @@
+.screen-start.clicked * {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+
+.screen-start {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.ads-container {
+  height: 25%;
+  width: 90%;
+  background-color: #e0e0e0;
+  margin-top: 20px;
+}
+
+img.logo {
+  max-width: 80%;
+  max-height: 50%;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+  color: black;
+}
+
+.slogan {
+  color: darkgrey;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.assistance-text {
+  color: black;
+  font-size: 0.8em;
+  text-align: center;
+}

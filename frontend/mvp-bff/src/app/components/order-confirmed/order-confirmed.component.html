@@ -1,0 +1,32 @@
+
+<header>
+  <img src="../../../assets/logo.svg" alt="Logo" class="logo">
+</header>
+<br> <br>
+
+<div class="details">
+<ng-container *ngIf="apiResponseData">
+  <h2>Order Confirmed</h2>
+  <h3> Order Id : {{apiResponseData.commandId}}</h3>
+  <ng-container *ngIf="!apiResponseData.tableId">
+    <h2>You can take your command</h2>
+  </ng-container>
+  <ng-container *ngIf="apiResponseData.tableId">
+    <h2>Please have a seat at table {{apiResponseData.tableId}}</h2>
+  </ng-container>
+  <br>
+  <ng-container *ngFor="let preparation of apiResponseData.dishTimes">
+    <div class="row">
+      <div class="col-12">
+        <h5>Preparation Id: {{ preparation.id }}</h5>
+        <p>Should be ready at <strong>{{ preparation.preparationTime | date:'HH\'h\'mm':'UTC+4'}}</strong></p>
+          <h5> Items :{{ preparation.shortName }}</h5>
+          <br>
+      </div>
+    </div>
+  </ng-container>
+</ng-container> 
+</div>
+
+  <ng-container *ngIf="!apiResponseData">
+</ng-container>

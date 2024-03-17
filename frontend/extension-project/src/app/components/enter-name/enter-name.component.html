@@ -1,0 +1,13 @@
+<header>
+  <img alt="Logo" class="logo" src="../../../assets/logo.svg">
+</header>
+<main>
+  <h1>Enter your name: </h1>
+  <div class="row baseline">
+    <mat-form-field>
+      <input [(ngModel)]="customerName" matInput name="Name" type="text">
+    </mat-form-field>
+    <button (click)="validate()" color="primary" mat-raised-button>Update</button>
+  </div>
+</main>
+

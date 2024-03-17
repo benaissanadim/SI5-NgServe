@@ -1,0 +1,10 @@
+<!-- in parent -->
+<!-- <app-order-in-preparation [preparation]="yourPreparationData"></app-order-in-preparation> -->
+
+
+<div class="preparation-progress">
+  <div class="preparation-label">Order Preparation Progress</div>
+  <div class="progress-bar">
+    <div [style.width.%]="getProgressPercentage()" class="progress"></div>
+  </div>
+</div>

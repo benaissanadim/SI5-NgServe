@@ -1,0 +1,14 @@
+.header{
+  display: block;
+  background-color: lightgray;
+  width: 100%;
+}
+
+.header > * {
+  margin-left: 1em;
+  border: none;
+}
+
+input{
+  width: 50px;
+}

@@ -1,0 +1,172 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+
+  & header {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .back-button {
+      position: absolute;
+      left: 10px;
+      background-color: #F0F0F0;
+      border: none;
+      padding: 8px;
+      border-radius: 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #E0E0E0;
+      }
+
+      & svg {
+        fill: #2E2E2E;
+      }
+    }
+
+    & img.logo {
+      max-width: 40%;
+    }
+  }
+
+  .content {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & h1 {
+      text-align: center;
+      width: 100%;
+    }
+
+    .order-items {
+      text-align: left;
+    }
+
+    .items {
+      display: flex;
+      overflow-x: auto;
+      width: 100%;
+      flex-direction: column;
+
+      .item {
+        display: flex;
+        align-items: center;
+        min-height: 100px;
+        min-width: 200px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 99%;
+        font-size: 1.1em;
+        font-weight: bolder;
+        transition: box-shadow 0.3s ease-in-out;
+
+        .image {
+          flex-shrink: 0;
+          width: 50px;
+          height: 50px;
+          overflow: hidden;
+          border-radius: 0.1em;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .details {
+          flex-grow: 1;
+          margin-left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .title {
+          }
+
+          .price {
+            align-self: self-start;
+          }
+        }
+
+        .quantity {
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+
+          & button {
+            cursor: pointer;
+            /* background-color: #ddd; */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            color: #ffffff; /* Le SVG sera blanc */
+          }
+
+          & button.decrement svg,
+          & button.increment svg {
+            stroke: currentColor;
+          }
+
+          & button.decrement {
+            background-color: #c20000;
+          }
+
+          & button.increment {
+            background-color: #005b00;
+          }
+
+          & svg {
+          }
+
+          & span {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
+
+  .footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    flex-direction: column;
+
+
+    .confirm {
+      background: #c20000;
+      color: #fff;
+      cursor: pointer;
+      padding: 10px 20px;
+      border: none;
+    }
+  }
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total, .confirm {
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 80%;
+}
+

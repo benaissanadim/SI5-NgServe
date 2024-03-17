@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+
+  & header {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .back-button {
+      position: absolute;
+      left: 10px;
+      background-color: #F0F0F0;
+      border: none;
+      padding: 8px;
+      border-radius: 15px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #E0E0E0;
+      }
+
+      & svg {
+        fill: #2E2E2E;
+      }
+    }
+
+    & img.logo {
+      max-width: 40%;
+    }
+  }
+
+  .centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    gap: 1rem;
+  }
+
+  .slider {
+    display: flex;
+    /* width: 400px; */
+    justify-content: space-between;
+    margin: 1em;
+
+
+    .option {
+      cursor: pointer;
+      color: #000;
+      transition: color 0.3s ease;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      &.selected {
+        background-color: rgba(185, 125, 44, 0.41);
+        color: #000;
+        font-weight: bold;
+      }
+    }
+  }
+
+  & h2 {
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+    margin: 2rem 0;
+    font-size: 1.2em;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  & button {
+    background: #c20000;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+  }
+}
+

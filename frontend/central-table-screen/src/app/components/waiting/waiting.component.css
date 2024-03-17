@@ -1,0 +1,37 @@
+span {
+  text-align: center;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+mat-progress-bar {
+  transform: scaleY(4);
+}
+
+.mat-progress-bar-container {
+  border-radius: 2em !important;
+  width: calc(100% - 2em);
+}
+
+.mat-progress-bar-container p {
+  z-index: 99;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: rgb(158, 1, 1);
+  font-weight: bold;
+  transform: translateY(-12px);
+}
+
+.item-list {
+  font-weight: bold;
+  font-size: medium;
+  display: inline-block;
+}
+
+.item-list p {
+  display: inline;
+  margin-right: 10px;
+}

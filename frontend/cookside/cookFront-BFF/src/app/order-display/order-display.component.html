@@ -1,0 +1,45 @@
+<div class="orders">
+  <div class="in-preparation">
+    <h3>In Preparation</h3>
+    <ul *ngIf="preparingOrders && preparingOrders.length > 0">
+      <li *ngFor="let order of preparingOrders">
+        <div class="order-item">
+          <span class="table">
+            Table:
+            <span>
+              <span *ngIf="Number(order.tableId) > 10; else tableNumber">Take Away</span>
+              <ng-template #tableNumber>{{ order.tableId }}</ng-template>
+            </span>
+          </span>
+          <br>
+          <span class="id">Preparation Id: {{ order.id }}</span>
+          <br>
+          <span class="id">READY AT: {{ order.shouldBeReadyAt }}</span>
+        </div>
+      </li>
+    </ul>
+    <p class="no-orders" *ngIf="!preparingOrders || preparingOrders.length === 0">No orders in preparation</p>
+  </div>
+
+  <div class="being-served">
+    <h3>Ready to be Served</h3>
+    <ul *ngIf="currentOrders && currentOrders.length > 0">
+      <li *ngFor="let order of currentOrders">
+        <div class="order-item">
+          <span class="table">
+            Table:
+            <span>
+              <span *ngIf="Number(order.tableId) > 10; else tableNumber">Take Away</span>
+              <ng-template #tableNumber>{{ order.tableId }}</ng-template>
+            </span>
+          </span>
+          <br>
+          <span class="id">Preparation Id: {{ order.id }}</span>
+          <br>
+          <span class="id">COMPLETED AT: {{ order.completedAt }}</span>
+        </div>
+      </li>
+    </ul>
+    <p class="no-orders" *ngIf="!currentOrders || currentOrders.length === 0">No orders ready to be served</p>
+  </div>
+</div>

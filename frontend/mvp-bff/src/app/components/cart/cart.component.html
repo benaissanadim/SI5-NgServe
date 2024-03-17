@@ -1,0 +1,50 @@
+<div class="container">
+  <header>
+    <button (click)="back()" class="back-button">
+      <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#2E2E2E"/> <!-- Dark Grey Arrow -->
+      </svg>
+    </button>
+    <img alt="Logo" class="logo" src="../../../assets/logo.svg">
+  </header>
+
+  <div class="content">
+    <h1>Your Cart</h1>
+
+    <div class="items">
+      <div *ngFor="let cartItemWithCount of getCartItemsWithCount()" class="item">
+<!--        <div class="image">-->
+<!--          <img [src]="cartItemWithCount" alt="Item Image"/>-->
+<!--        </div>-->
+        <div class="details">
+          <div class="title">{{cartItemWithCount.item.shortName}}</div>
+          <div class="price">€{{cartItemWithCount.item.price}}</div>
+        </div>
+        <div class="quantity">
+          <button (click)="decrement(cartItemWithCount.item)" class="decrement">
+            <svg fill="none" height="48px" viewBox="0 0 24 24" width="48px" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12L18 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+            </svg>
+          </button>
+          <span>{{cartItemWithCount.count}}</span>
+          <button (click)="increment(cartItemWithCount.item)" class="increment">
+            <svg fill="none" height="48px" viewBox="0 0 24 24" width="48px" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 12H20M12 4V20" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="total">
+      <span>Total</span>
+      <span><strong>€{{getTotalPrice()}}</strong></span>
+    </div>
+    <button (click)="goToPayment()" class="confirm">Confirm order - €{{ getTotalPrice() }}</button>
+  </div>
+</div>

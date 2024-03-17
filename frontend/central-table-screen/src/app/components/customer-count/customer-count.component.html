@@ -1,0 +1,12 @@
+<header>
+  <img alt="Logo" class="logo" src="../../../assets/logo.svg">
+</header>
+<main>
+  <div>
+    <h1>Welcome to the restaurant!</h1>
+    <h2>How many people will eat at this table?</h2>
+  </div>
+  <div class="flex row">
+    <button (click)="validate(i)" *ngFor="let i of [2, 3, 4]" color="primary" mat-raised-button>{{i}}</button>
+  </div>
+</main>

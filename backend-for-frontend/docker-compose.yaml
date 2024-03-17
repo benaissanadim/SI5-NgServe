@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  bff:
+    image: bff
+    networks:
+      -  restaurant_spring-restaurant-network
+    ports:
+      - 4000:8080
+
+networks:
+  restaurant_spring-restaurant-network :
+    external: true
